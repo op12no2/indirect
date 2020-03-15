@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,99chrome=1" />
+
+<title>herd immunity demonstration</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="title"       content="herd immunity demonstration" />
+<meta name="description" content="herd immunity demonstration" />
+<meta name="keywords"    content="infection model, epidemic, coronavirus, covid19, covid" />
+
+<meta name="viewport" content="width=device-width, initial-scale=0.81">
+
+<style>
+body     {margin:0; padding:0; width: 480px;}
+#graphs  {}
+#text    {font: 1.5em serif; color: #666666; padding: 0 20px 0 20px;}
+#text2   {font: 1em   serif; color: #999999; padding: 0 20px 0 20px;}
+
+.slidecontainer {
+  width: 350px;
+  margin-left: 60px;
+  margin-top: 40px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 35px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background: #1b4f72;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 35px;
+  height: 35px;
+  background: #1b4f72;
+  cursor: pointer;
+}
+</style>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+
+<script type="text/javascript" src="indirect.js"></script>
+
+</head>
+<body>
+
+<canvas id="graphs" width="480" height="480" style="border: 0px solid"></canvas>
+
+<form>
+  <div class="slidecontainer">
+    <input class="slider" type="range" id="dslider" min=15 max=200 step=5 value=25>
+  </div>
+</form>
+
+<div id="text">
+<br><br>
+<b>Herd Immunity Demonstration</b>
+<br><br>
+The vertical axis represents the percentage of a population infected during an epidemic.
+<br><br>
+The horizontal axis represents the percentage of the population who were immune at the
+start of an epidemic; either through vaccination or previous exposure, recovery and 
+long lasting immunity. 
+<br><br>
+Thus one vertical slice of the graph represents a whole epidemic. 
+<br><br>
+If the total number of people infected during an epidemic had a linear relationship to the 
+number of people initially immune, we would expect to see the diagonal line shown.
+<br><br>
+In reality the total number of people infected is always less than that, as shown by the curved line.
+<br><br>
+The vertical distance between the two lines represents those people who were <i>indirectly protected</i>.
+This is called herd immunity.
+<br><br>
+This herd effect is greatest at the herd immunity threshold (H) where the percentage of the 
+population who are infected drops off dramatically; effectively protecting everybody who is
+susceptible.  
+<br><br>
+Vaccination schedules target H for this reason and can in some cases
+result in total eradication of a disease; smallpox for example.
+<br><br>
+The virulence of a disease is represented by the basic reproduction number (R0) and
+can be thought of as the average number of people somebody will infect during the early 
+stages of an epidemic.  
+<br><br>
+Use the green slider to change R0. 
+<br><br>
+As R0 increases, H increases (*) and the shape of the curve changes.  
+<br><br>
+Notice that herd effects other than those at or near H are minimal unless R0 is quite small.
+<br><br>
+Notice also when nobody is immune at the start of an epidemic (far left of the graph) the
+percentage of the population infected is always above 50% and very quickly increases to 
+near 100% as R0 increases.   
+<br><br>
+Here are some examples of R0:-
+<br><br>
+COVID-19: 1.5 to 4 (**)<br>
+Smallpox: 4 to 7<br>
+Rubella: 5 to 7<br>
+Mumps 4: to 12<br>
+Chickenpox: 10 to 12<br>
+Pertussis: 12 to 18<br>
+Measles: 12 to 18<br>
+Zombies: 20+
+<br><br>
+(*) H=1-1/R0<br>
+(**) May not give long lasting immunity.
+<br><br>
+Refresh the page to reset and keep up to date with the latest version. 
+This is version <span id="ver">x</span>.
+</div>
+
+<div id="text2">
+<br>
+<br>
+<a target="_blank" href="http://op12no2.me/stuff/herdhis.pdf">ref - see figure 4(b)</a>
+|
+<a target="_blank" href="http://op12no2.me">more epi toys</a><br>
+<br>
+</div>
+
+</body>
