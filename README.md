@@ -1,2 +1,2 @@
 # indirect
-A herd immunity demonstration
+A herd immunity demonstration.
